@@ -1,5 +1,4 @@
 let mongoose = require("mongoose");
-const { boolean } = require("webidl-conversions");
 
 let postsScheme = new mongoose.Schema({
     fullname: String,

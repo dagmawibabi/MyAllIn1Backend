@@ -1,4 +1,3 @@
-let mongoose = require("mongoose");
 let postsModel = require("../models/postsModel");
 
 // Introduction
