@@ -10,9 +10,9 @@ let postsRoute = require("./routes/postsRoute");
 
 
 //! Env
-let appName = "Philomena";
+let appName = process.env.APP_NAME || "Philomena";
 let portNum = process.env.PORT || 7000;
-let mongoAtlastUrl = "mongodb+srv://BobRoss:BobRoss1234@cluster0.fivp4.mongodb.net/Philomena?retryWrites=true&w=majority";
+let mongoAtlastUrl = process.env.DB_URL;
 
 //! SERVER
 app.listen(portNum, ()=>{
