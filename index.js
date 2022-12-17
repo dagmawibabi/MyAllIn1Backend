@@ -12,7 +12,7 @@ let postsRoute = require("./routes/postsRoute");
 //! Env
 let appName = process.env.APP_NAME || "Philomena";
 let portNum = process.env.PORT || 7000;
-let mongoAtlastUrl = process.env.DB_URL;
+let mongoAtlastUrl = process.env.DB_URL || "mongodb+srv://BobRoss:BobRoss1234@cluster0.fivp4.mongodb.net/TheUnityProjectMural?retryWrites=true&w=majority";
 
 //! SERVER
 app.listen(portNum, ()=>{
@@ -32,11 +32,11 @@ async function connectToDB(){
 
 
 // Routes
-app.get(`/${appName}`,(req, res) => {
+app.get(`/philomena`,(req, res) => {
     res.send(`Welcome to ${appName} API`);
 });
 
-app.use(`/${appName}/posts`, postsRoute);
+app.use(`/philomena/posts`, postsRoute);
 
 connectToDB();
 
