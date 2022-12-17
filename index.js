@@ -1,18 +1,22 @@
 let express = require("express");
-let app = express();
+let app = new express();
 let mongoose = require("mongoose");
+let cors = require('cors');
+
 mongoose.set("strictQuery", false);
-app.use(express.urlencoded({extended: false}));
-app.use(express.json());
 
 //! File Imports
 let postsRoute = require("./routes/postsRoute");
 
+//! Middleware 
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({extended: false}));
 
 //! Env
 let appName = process.env.APP_NAME || "Philomena";
 let portNum = process.env.PORT || 7000;
-let mongoAtlastUrl = process.env.DB_URL || "";
+let mongoAtlastUrl = process.env.DBURL || "";
 
 //! SERVER
 app.listen(portNum, ()=>{
@@ -32,11 +36,11 @@ async function connectToDB(){
 
 
 // Routes
-app.get(`/philomena/`,(req, res) => {
+app.get("/philomena/", async (req, res) => {
     res.send(`Welcome to ${appName} API`);
 });
 
-app.use(`/philomena/posts/`, postsRoute);
+app.use("/philomena/posts/", postsRoute);
 
 connectToDB();
 
