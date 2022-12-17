@@ -32,11 +32,11 @@ async function connectToDB(){
 
 
 // Routes
-app.get(`/philomena`,(req, res) => {
+app.get(`/philomena/`,(req, res) => {
     res.send(`Welcome to ${appName} API`);
 });
 
-app.use(`/philomena/posts`, postsRoute);
+app.use(`/philomena/posts/`, postsRoute);
 
 connectToDB();
 
