@@ -1,4 +1,5 @@
 let postsModel = require("../models/postsModel");
+let accountModel = require("../models/accountModel");
 
 // Introduction
 let introduction = (req, res) => {
@@ -30,9 +31,10 @@ let newPost = async (req, res) => {
         "time": Date.now(),
     }
 
-    // console.log(req.body);
 
     await postsModel.create(newPost);
+    await accountModel.updateOne({"username": reqBody["username"]},{$inc: {"posts": 1}});
+
     // await postsModel.deleteMany({"username": "dagmawibabi"});
     res.status(200).send("New Post has been published!");
 }

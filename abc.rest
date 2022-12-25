@@ -1,14 +1,37 @@
-# GET http://localhost:7000/philomena/
 
+# GET http://localhost:7000/philomena/notifications/
+# GET http://localhost:7000/philomena/authentication/
 
-POST http://localhost:7000/philomena/authentication/signup HTTP/1.1
+POST http://localhost:7000/philomena/notifications/readNotifications HTTP/1.1
 content-type: application/json
 
 {
-    "fullname": "papm",
-    "username": "papixx",
-    "password": "babi"
+    "notificationID": "63a8cf6bb12b98128e7529bf"
 }
+
+# POST http://localhost:7000/philomena/notifications/getNotifications HTTP/1.1
+# content-type: application/json
+
+# {
+#     "username": "dagmawibabi"
+# }
+
+# POST http://localhost:7000/philomena/interactions/likeDislikePosts HTTP/1.1
+# content-type: application/json
+
+# {
+#     "postID": "639ee0c1d37e8a5ba969fd0d",
+#     "likedBy": "devOne"
+# }
+
+# POST http://localhost:7000/philomena/authentication/signup HTTP/1.1
+# content-type: application/json
+
+# {
+#     "fullname": "papm",
+#     "username": "papixx",
+#     "password": "babi"
+# }
 
 # POST http://localhost:7000/philomena/authentication/login HTTP/1.1
 # content-type: application/json
