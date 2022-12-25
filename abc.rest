@@ -1,0 +1,19 @@
+# GET http://localhost:7000/philomena/
+
+
+POST http://localhost:7000/philomena/authentication/signup HTTP/1.1
+content-type: application/json
+
+{
+    "fullname": "papm",
+    "username": "papixx",
+    "password": "babi"
+}
+
+# POST http://localhost:7000/philomena/authentication/login HTTP/1.1
+# content-type: application/json
+
+# {
+#     "username": "papi",
+#     "password": "babi"
+# }

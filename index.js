@@ -8,6 +8,7 @@ mongoose.set("strictQuery", false);
 //! File Imports
 let postsRoute = require("./routes/postsRoute");
 let interactionsRoute = require("./routes/interactionsRoute");
+let authenticationRoute = require("./routes/authenticationRoute");
 
 //! Middleware 
 app.use(cors());
@@ -43,6 +44,7 @@ app.get("/philomena/", async (req, res) => {
 
 app.use("/philomena/posts/", postsRoute);
 app.use("/philomena/interactions/", interactionsRoute);
+app.use("/philomena/authentication/", authenticationRoute);
 
 connectToDB();
 

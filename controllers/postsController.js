@@ -30,7 +30,7 @@ let newPost = async (req, res) => {
         "time": Date.now(),
     }
 
-    console.log(req.body);
+    // console.log(req.body);
 
     await postsModel.create(newPost);
     // await postsModel.deleteMany({"username": "dagmawibabi"});
