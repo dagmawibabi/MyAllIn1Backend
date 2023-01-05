@@ -1,4 +1,7 @@
 
+# GET http://localhost:7000/philomena/search/
+GET http://localhost:7000/philomena/search/doe
+
 # GET http://localhost:7000/philomena/notifications/
 # GET http://localhost:7000/philomena/authentication/
 
