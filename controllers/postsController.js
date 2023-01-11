@@ -28,6 +28,10 @@ let newPost = async (req, res) => {
         "reports": [],
 
         "hidden": reqBody["hidden"] ? true : false,
+        "spoiler": reqBody["spoiler"] ? true : false,
+        "nsfw": reqBody["nsfw"] ? true : false,
+        "gore": reqBody["gore"] ? true : false,
+    
         "time": Date.now(),
     }
 
@@ -52,10 +56,27 @@ let getUserPosts = async (req, res) => {
     res.status(200).send(allUserPosts);
 }
 
+// Delete Posts
+let deletePost = async (req, res) => {
+    let reqBody = req.body;
+    let username = reqBody["username"]; 
+    let content = reqBody["content"]; 
+    let time = reqBody["time"]; 
+    await postsModel.deleteOne({"username": username, "content": content, "time": time});
+    res.status(200).send("Post Deleted");
+}
+
+// Repost
+let repost = async (req, res) => {
+    
+    res.status(200).send("Post Reposted");
+}
+
 //! Export
 module.exports = {
     introduction,
     newPost,
     getAllPosts,
     getUserPosts,
+    deletePost,
 }

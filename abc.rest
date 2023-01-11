@@ -1,16 +1,27 @@
+GET http://localhost:7000/philomena/profile/getprofile/dagmawibabi
+
+# POST http://localhost:7000/philomena/posts/deletePost HTTP/1.1
+# content-type: application/json
+
+# {
+#     "username": "dagmawibabi",
+#     "content": "\\",
+#     "time": "1673389885558"
+# }
+
 
 # GET http://localhost:7000/philomena/search/
-GET http://localhost:7000/philomena/search/doe
+# GET http://localhost:7000/philomena/search/doe
 
 # GET http://localhost:7000/philomena/notifications/
 # GET http://localhost:7000/philomena/authentication/
 
-POST http://localhost:7000/philomena/notifications/readNotifications HTTP/1.1
-content-type: application/json
+# POST http://localhost:7000/philomena/notifications/readNotifications HTTP/1.1
+# content-type: application/json
 
-{
-    "notificationID": "63a8cf6bb12b98128e7529bf"
-}
+# {
+#     "notificationID": "63a8cf6bb12b98128e7529bf"
+# }
 
 # POST http://localhost:7000/philomena/notifications/getNotifications HTTP/1.1
 # content-type: application/json

@@ -1,6 +1,7 @@
 let mongoose = require("mongoose");
 
 let accountSchema = new mongoose.Schema({
+    "verified": Boolean,
     "fullname": String,
     "username": String,
     "password": String,

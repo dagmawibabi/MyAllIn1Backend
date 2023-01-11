@@ -6,5 +6,6 @@ Router.get("/", postsController.introduction);
 Router.post("/newPost", postsController.newPost);
 Router.get("/getAllPosts", postsController.getAllPosts);
 Router.post("/getUserPosts", postsController.getUserPosts);
+Router.post("/deletePost", postsController.deletePost);
 
 module.exports = Router;

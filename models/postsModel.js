@@ -17,6 +17,9 @@ let postsScheme = new mongoose.Schema({
     reports: Array,
     
     hidden: Boolean,
+    spoiler: Boolean,
+    nsfw: Boolean,
+    gore: Boolean,
 
     time: Number,
 })

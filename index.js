@@ -11,6 +11,7 @@ let interactionsRoute = require("./routes/interactionsRoute");
 let authenticationRoute = require("./routes/authenticationRoute");
 let notificationsRoute = require("./routes/notificationsRoute");
 let searchRoute = require("./routes/searchRoute");
+let profileRoute = require("./routes/profileRoute");
 
 //! Middleware 
 app.use(cors());
@@ -20,7 +21,7 @@ app.use(express.urlencoded({extended: false}));
 //! Env
 let appName = process.env.APP_NAME || "Philomena";
 let portNum = process.env.PORT || 7000;
-let mongoAtlastUrl = process.env.DBURL || "";
+let mongoAtlastUrl = process.env.DBURL || "mongodb+srv://BobRoss:BobRoss1234@cluster0.fivp4.mongodb.net/Philomena?retryWrites=true&w=majority";
 
 //! SERVER
 app.listen(portNum, ()=>{
@@ -49,6 +50,8 @@ app.use("/philomena/interactions/", interactionsRoute);
 app.use("/philomena/authentication/", authenticationRoute);
 app.use("/philomena/notifications/", notificationsRoute);
 app.use("/philomena/search/", searchRoute);
+app.use("/philomena/profile/", profileRoute);
+
 
 connectToDB();
 

@@ -11,6 +11,7 @@ let signup = async (req, res) => {
     let result = await accountModel.findOne({"username": username});
     if(result == null) {
         let newAccount = {
+            "verified": false,
             "fullname": reqBody["fullname"],
             "username": reqBody["username"],
             "password": reqBody["password"],        
