@@ -3,6 +3,7 @@ let app = new express();
 let mongoose = require("mongoose");
 let cors = require('cors');
 
+//!
 mongoose.set("strictQuery", false);
 
 //! File Imports
@@ -12,6 +13,7 @@ let authenticationRoute = require("./routes/authenticationRoute");
 let notificationsRoute = require("./routes/notificationsRoute");
 let searchRoute = require("./routes/searchRoute");
 let profileRoute = require("./routes/profileRoute");
+let uploadRoute = require("./routes/uploadRoute");
 
 //! Middleware 
 app.use(cors());
@@ -21,7 +23,7 @@ app.use(express.urlencoded({extended: false}));
 //! Env
 let appName = process.env.APP_NAME || "Philomena";
 let portNum = process.env.PORT || 7000;
-let mongoAtlastUrl = process.env.DBURL || "";
+let mongoAtlastUrl = process.env.DBURL || "mongodb+srv://BobRoss:BobRoss1234@cluster0.fivp4.mongodb.net/Philomena?retryWrites=true&w=majority";
 
 //! SERVER
 app.listen(portNum, ()=>{
@@ -51,6 +53,7 @@ app.use("/philomena/authentication/", authenticationRoute);
 app.use("/philomena/notifications/", notificationsRoute);
 app.use("/philomena/search/", searchRoute);
 app.use("/philomena/profile/", profileRoute);
+app.use("/philomena/upload/", uploadRoute);
 
 
 connectToDB();

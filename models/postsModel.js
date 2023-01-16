@@ -4,6 +4,7 @@ let postsScheme = new mongoose.Schema({
     fullname: String,
     username: String,
     content: String,
+    image: String,
 
     likes: Number,
     comments: Number,

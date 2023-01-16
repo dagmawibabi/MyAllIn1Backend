@@ -1,4 +1,16 @@
-GET http://localhost:7000/philomena/profile/getprofile/dagmawibabi
+POST http://localhost:7000/philomena/upload/images HTTP/1.1
+content-type: application/json
+
+{
+    "username": "dagmawibabi",
+    "content": "\\",
+    "time": "1673389885558"
+}
+
+
+# GET http://localhost:7000/philomena/upload/images
+
+# GET http://localhost:7000/philomena/profile/getprofile/dagmawibabi
 
 # POST http://localhost:7000/philomena/posts/deletePost HTTP/1.1
 # content-type: application/json
