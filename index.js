@@ -44,7 +44,7 @@ async function connectToDB(){
 
 // Routes
 app.get("/philomena/", async (req, res) => {
-    res.send(`Welcome to ${appName} API`);
+    res.send(`Welcome to ${appName} API dev`);
 });
 
 app.use("/philomena/posts/", postsRoute);
