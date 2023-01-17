@@ -28,10 +28,10 @@ let newPost = async (req, res) => {
         "tags": reqBody["tags"] == null ? [] : reqBody["tags"],
         "reports": [],
 
-        "hidden": reqBody["hidden"] ? true : false,
-        "spoiler": reqBody["spoiler"] ? true : false,
-        "nsfw": reqBody["nsfw"] ? true : false,
-        "gore": reqBody["gore"] ? true : false,
+        "hidden": reqBody["hidden"] == true ? true : false,
+        "spoiler": reqBody["spoiler"] == true ? true : false,
+        "nsfw": reqBody["nsfw"] == true ? true : false,
+        "gore": reqBody["gore"] == true ? true : false,
     
         "time": Date.now(),
     }
