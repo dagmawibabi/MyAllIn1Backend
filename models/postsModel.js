@@ -3,8 +3,10 @@ let mongoose = require("mongoose");
 let postsScheme = new mongoose.Schema({
     fullname: String,
     username: String,
+
     content: String,
     image: String,
+    video: String,
 
     likes: Number,
     comments: Number,
