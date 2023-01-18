@@ -13,7 +13,7 @@ let newPost = async (req, res) => {
         "fullname": reqBody["fullname"],
         "username": reqBody["username"],
         "content": reqBody["content"],
-        "image": req.imageName,
+        "image": "",
 
         "likes": 1,
         "comments": 0,
