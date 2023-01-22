@@ -14,6 +14,7 @@ let notificationsRoute = require("./routes/notificationsRoute");
 let searchRoute = require("./routes/searchRoute");
 let profileRoute = require("./routes/profileRoute");
 let uploadRoute = require("./routes/uploadRoute");
+let privateChatsRoute = require("./routes/privateChatsRoute");
 
 //! Middleware 
 app.use(cors());
@@ -54,7 +55,7 @@ app.use("/philomena/notifications/", notificationsRoute);
 app.use("/philomena/search/", searchRoute);
 app.use("/philomena/profile/", profileRoute);
 app.use("/philomena/upload/", uploadRoute);
-
+app.use("/philomena/privateChats/", privateChatsRoute);
 
 connectToDB();
 

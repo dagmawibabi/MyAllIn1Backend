@@ -1,11 +1,25 @@
-POST http://localhost:7000/philomena/upload/images HTTP/1.1
-content-type: application/json
+GET http://localhost:7000/philomena/privateChats/getPrivateChat/dagmAwibabi/jordanb
 
-{
-    "username": "dagmawibabi",
-    "content": "\\",
-    "time": "1673389885558"
-}
+# POST http://localhost:7000/philomena/privateChats/sendPrivateMessage HTTP/1.1
+# content-type: application/json
+
+# {
+#     "from": "jordanb",
+#     "to": "dagmawiBabi",
+#     "forwardedFrom": "",
+#     "content": "aig afa a ascadia iagd i"
+# }
+
+# GET http://localhost:7000/philomena/privateChats/
+
+# POST http://localhost:7000/philomena/upload/images HTTP/1.1
+# content-type: application/json
+
+# {
+#     "username": "dagmawibabi",
+#     "content": "\\",
+#     "time": "1673389885558"
+# }
 
 
 # GET http://localhost:7000/philomena/upload/images
