@@ -20,6 +20,7 @@ let postsController = require("../controllers/postsController");
 Router.get("/", postsController.introduction);
 Router.post("/newPost", postsController.newPost);
 Router.get("/getAllPosts", postsController.getAllPosts);
+Router.get("/getFeed/:username", postsController.getFeed);
 Router.post("/getUserPosts", postsController.getUserPosts);
 Router.post("/deletePost", postsController.deletePost);
 

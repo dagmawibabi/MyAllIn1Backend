@@ -1,4 +1,5 @@
 let notificationModel = require("../models/notificationModel");
+const postsModel = require("../models/postsModel");
 
 
 let introduction = (req, res) => {
@@ -21,8 +22,30 @@ let readNotifications = async (req, res) => {
     res.status(200).send("Notification Read");
 }
 
+let readAllNotifications = async (req, res) => {
+    let username = req.username;
+    await notificationModel.updateMany({"destination": username},{"isRead": true});
+    res.status(200).send("All Notification Read");
+}
+
+let unreadAllNotifications = async (req, res) => {
+    let username = req.username;
+    await notificationModel.updateMany({"destination": username},{"isRead": false});
+    res.status(200).send("All Notification Read");
+}
+
+let getNotificationContent = async (req, res) => {
+    let notificationID = req.params.notificationID;
+    let notification = await notificationModel.findOne({"_id": notificationID});
+    let notificationContent = await postsModel.findOne({"_id": notification["content"]});
+    res.status(200).send(notificationContent);
+}
+
 module.exports = {
     introduction,
     getNotifications,
     readNotifications,
+    readAllNotifications,
+    unreadAllNotifications,
+    getNotificationContent,
 }

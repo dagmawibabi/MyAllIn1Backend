@@ -1,13 +1,26 @@
-GET http://localhost:7000/philomena/privateChats/getPrivateChat/dagmAwibabi/jordanb
+# GET http://localhost:7000/philomena/privateChats/clearPrivateChat/dagmAwibabi/anne
+
+# GET http://localhost:7000/philomena/privateChats/getChats/dagmawibabi
+
+
+
+# GET http://localhost:7000/philomena/posts/getFeed/anne
+
+# GET http://localhost:7000/philomena/interactions/followUnfollowuser/anne/dagmawibabi
+
+# GET http://localhost:7000/philomena/profile/getAllFollowers/dagmawibabi
+# GET http://localhost:7000/philomena/profile/getAllFollowing/dagmawibabi
+
+# GET http://localhost:7000/philomena/privateChats/getPrivateChat/anne/dagmawibabi
 
 # POST http://localhost:7000/philomena/privateChats/sendPrivateMessage HTTP/1.1
 # content-type: application/json
 
 # {
-#     "from": "jordanb",
-#     "to": "dagmawiBabi",
+#     "from": "anne",
+#     "to": "dagmawibabi",
 #     "forwardedFrom": "",
-#     "content": "aig afa a ascadia iagd i"
+#     "content": "broooo yooo"
 # }
 
 # GET http://localhost:7000/philomena/privateChats/
@@ -35,6 +48,14 @@ GET http://localhost:7000/philomena/privateChats/getPrivateChat/dagmAwibabi/jord
 #     "time": "1673389885558"
 # }
 
+# POST http://localhost:7000/philomena/posts/newPost HTTP/1.1
+# content-type: application/json
+
+# {
+#     "username": "yyyy",
+#     "content": "im on philomena",
+#     "time": "1673389885558"
+# }
 
 # GET http://localhost:7000/philomena/search/
 # GET http://localhost:7000/philomena/search/doe
@@ -68,9 +89,9 @@ GET http://localhost:7000/philomena/privateChats/getPrivateChat/dagmAwibabi/jord
 # content-type: application/json
 
 # {
-#     "fullname": "papm",
-#     "username": "papixx",
-#     "password": "babi"
+#     "fullname": "Jordan B Peterson",
+#     "username": "jordan",
+#     "password": "jordan"
 # }
 
 # POST http://localhost:7000/philomena/authentication/login HTTP/1.1
@@ -80,3 +101,6 @@ GET http://localhost:7000/philomena/privateChats/getPrivateChat/dagmAwibabi/jord
 #     "username": "papi",
 #     "password": "babi"
 # }
+
+// https://dagmawibabi.com/static/media/me.b4b941897136a2959e33.png
+// https://equatemagazine.com/wp-content/uploads/2021/06/Anna_MVinay014D-small-crop-scaled.jpg

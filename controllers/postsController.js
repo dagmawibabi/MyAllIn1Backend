@@ -50,6 +50,16 @@ let getAllPosts = async (req, res) => {
     res.status(200).send(allPosts);
 }
 
+// Get Custom Feed
+let getFeed = async (req, res) => {
+    let username = req.params.username;
+    let user = await accountModel.findOne({"username": username}, {"following": 1});
+    let userFollowing = user["following"];
+    userFollowing.push(username);
+    let feed = await postsModel.find({"username": {$in: userFollowing}});
+    res.status(200).send(feed);
+}
+
 // Get User Posts
 let getUserPosts = async (req, res) => {
     let username = req.body["username"];
@@ -64,6 +74,7 @@ let deletePost = async (req, res) => {
     let content = reqBody["content"]; 
     let time = reqBody["time"]; 
     await postsModel.deleteOne({"username": username, "content": content, "time": time});
+    await accountModel.updateOne({"username": username}, {$inc: {"posts": -1}});
     res.status(200).send("Post Deleted");
 }
 
@@ -78,6 +89,7 @@ module.exports = {
     introduction,
     newPost,
     getAllPosts,
+    getFeed,
     getUserPosts,
     deletePost,
 }

@@ -8,6 +8,7 @@ let introduction = (req, res) => {
 let signup = async (req, res) => {
     let reqBody = req.body;
     let username = reqBody["username"];
+    let emailDomain = process.env.APP_NAME || "philomena";
     let result = await accountModel.findOne({"username": username});
     if(result == null) {
         let newAccount = {
@@ -15,13 +16,13 @@ let signup = async (req, res) => {
             "fullname": reqBody["fullname"],
             "username": reqBody["username"],
             "password": reqBody["password"],        
-            "profilepic": "assets/images/me.jpg",
+            "profilepic": "https://i.pinimg.com/564x/e0/ab/3a/e0ab3a820b9e6cb0553605314cf02717.jpg",
             "posts": 0,
-            "followers": 0,
-            "following": 0,
-            "phone": "",
-            "email": "",
-            "bio": "",
+            "followers": [],
+            "following": [],
+            "phone": "+1234567890",
+            "email": reqBody["username"] + "@" + emailDomain + ".com",
+            "bio": "Build, Break and Rebuild",
         };
         let newAccountObj = await accountModel.create(newAccount);
         res.status(200).send(newAccountObj);
