@@ -12,6 +12,7 @@ let accountSchema = new mongoose.Schema({
     "phone": String,
     "email": String,
     "bio": String,
+    "communities": Array,
 })
 
 let accountModel = new mongoose.model("accounts", accountSchema);

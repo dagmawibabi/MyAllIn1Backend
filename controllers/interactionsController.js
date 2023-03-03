@@ -13,7 +13,7 @@ let likeDislikePosts = async (req, res) => {
     let likedBy = req.body["likedBy"];
     let currentPost = await postsModel.findOne({"_id": likedPostID});
 
-    if(currentPost["likers"].includes(likedBy)){
+    if(currentPost["likers"].includes(likedBy) == true){
         await postsModel.updateOne({"_id": likedPostID},{$inc: {"likes": -1}}); 
         await postsModel.updateOne({"_id": likedPostID},{$pull: {"likers": likedBy}}); 
         // Remove Notification
@@ -51,10 +51,28 @@ let followUnFollowUser = async (req, res) => {
         await accountModel.updateOne({"username": username}, {$push: {"following": newUsername}});
         await accountModel.updateOne({"username": newUsername}, {$push: {"followers": username}});
         res.status(200).send("Followed User");
+        // Create Notification
+        let notificationObject = {
+            "source": newUsername,
+            "destination": username, 
+            "message": "followed you.",
+            "content": newUsername,
+            "isRead": false,
+            "time": Date.now(),
+        }
+        await notificationModel.create(notificationObject);
     } else {
         await accountModel.updateOne({"username": username}, {$pull: {"following": newUsername}});
         await accountModel.updateOne({"username": newUsername}, {$pull: {"followers": username}});    
         res.status(200).send("Unfollowed User");
+        // Remove Notification
+        let notificationObject = {
+            "source": newUsername,
+            "destination": username, 
+            "message": "followed you.",
+            "content": newUsername,
+        }
+        await notificationModel.create(notificationObject);
     }
 }
 

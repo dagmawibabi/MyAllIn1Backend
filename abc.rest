@@ -1,7 +1,44 @@
+
+# GET http://localhost:7000/philomena/community/deleteCommunity/SamAltmanCommunity/dagmawibabi
+# GET http://localhost:7000/philomena/community/getMyCommunities/dagmawibabi
+# GET http://localhost:7000/philomena/community/getCommunityChat/SamAltmanCommunity
+# GET http://localhost:7000/philomena/community/clearCommunityChat/SamAltmanCommunity/dagmawibabi
+# GET http://localhost:7000/philomena/community/clearAllCommunityChat/SamAltmanCommunity
+
+# POST http://localhost:7000/philomena/community/sendCommunityChat HTTP/1.1
+# content-type: application/json
+
+# {
+#     "from": "dagmawibabixx",
+#     "community": "SamAltmanCommunity",
+#     "forwardedFrom": "",
+#     "content": "bruh"
+# }
+
+# POST http://localhost:7000/philomena/community/createCommunity HTTP/1.1
+# content-type: application/json
+
+# {
+#     "name": "Sam Altman",
+#     "username": "SamAltmanCommunity",
+#     "members": "",
+#     "bio": "Welcome to my community",
+#     "private": false,
+#     "owner": "dagmawibabi"
+# }
+
+
+# GET http://localhost:7000/philomena/community/leaveCommunity/SamAltmanCommunity/dagmawibabi
+# GET http://localhost:7000/philomena/community/joinCommunity/SamAltmanCommunity/dagmawibabi
+# GET http://localhost:7000/philomena/community
+
+
+# GET http://localhost:7000/philomena/bots
+
+
 # GET http://localhost:7000/philomena/privateChats/clearPrivateChat/dagmAwibabi/anne
 
 # GET http://localhost:7000/philomena/privateChats/getChats/dagmawibabi
-
 
 
 # GET http://localhost:7000/philomena/posts/getFeed/anne

@@ -15,6 +15,8 @@ let searchRoute = require("./routes/searchRoute");
 let profileRoute = require("./routes/profileRoute");
 let uploadRoute = require("./routes/uploadRoute");
 let privateChatsRoute = require("./routes/privateChatsRoute");
+let botsRoute = require("./routes/botsRoute");
+let communityRoute = require("./routes/communityRoute");
 
 //! Middleware 
 app.use(cors());
@@ -56,6 +58,8 @@ app.use("/philomena/search/", searchRoute);
 app.use("/philomena/profile/", profileRoute);
 app.use("/philomena/upload/", uploadRoute);
 app.use("/philomena/privateChats/", privateChatsRoute);
+app.use("/philomena/bots/", botsRoute);
+app.use("/philomena/community", communityRoute);
 
 connectToDB();
 

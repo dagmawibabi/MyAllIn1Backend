@@ -3,6 +3,7 @@ let mongoose = require("mongoose");
 let postsScheme = new mongoose.Schema({
     fullname: String,
     username: String,
+    isByBot: Boolean,
 
     content: String,
     image: String,
