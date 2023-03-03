@@ -23,6 +23,7 @@ let signup = async (req, res) => {
             "phone": "+1234567890",
             "email": reqBody["username"] + "@" + emailDomain + ".com",
             "bio": "Build, Break and Rebuild",
+            "communities": [],
         };
         let newAccountObj = await accountModel.create(newAccount);
         res.status(200).send(newAccountObj);
@@ -52,6 +53,7 @@ let signupAnonymous = async (req, res) => {
             "phone": "+1234567890",
             "email": reqBody["username"] + "@" + emailDomain + ".com",
             "bio": "Build, Break and Rebuild",
+            "communities": [],
         };
         let newAccountObj = await accountModel.create(newAccount);
         res.status(200).send(newAccountObj);
