@@ -141,6 +141,26 @@ let clearAllCommunityChat = async (req, res) => {
     res.status(200).send(chats);
 }
 
+let updateCommunityInfo = async (req, res) => {
+    let reqBody = req.body;
+    let owner = reqBody["owner"].toString().toLowerCase();
+    let username = reqBody["username"];
+    let bio = reqBody["bio"].toString();
+    let introduction = reqBody["introduction"].toString();
+    let rules = reqBody["rules"].toString();
+    let faq = reqBody["faq"].toString();
+
+    let community = await communityModel.findOne({username: username});
+    if (community["owner"].toString().toLowerCase() == owner) {
+        await communityModel.updateOne({username: username}, {bio: bio, introduction: introduction, rules: rules, faq: faq});
+        res.status(200).send("Community info updated");
+    } else {
+        res.status(200).send("Community info can only be changed by the owner or the admins");
+    }
+
+
+}
+
 module.exports = {
     introduction,
     getMyCommunities,
@@ -152,4 +172,5 @@ module.exports = {
     getCommunityChat,
     clearCommunityChat,
     clearAllCommunityChat,
+    updateCommunityInfo
 }
