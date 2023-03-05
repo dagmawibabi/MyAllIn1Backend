@@ -1,5 +1,6 @@
 let postsModel = require("../models/postsModel");
 let accountModel = require("../models/accountModel");
+let commentsModel = require("../models/commentsModel");
 
 // Introduction
 let introduction = (req, res) => {
@@ -18,13 +19,13 @@ let newPost = async (req, res) => {
         "image": "",
 
         "likes": 1,
-        "comments": 0,
+        "commentCount": 0,
         "reposts": 0, 
 
         "likers": [
             reqBody["username"],
         ],
-        "commenters": [],
+        "comments": [],
         "reposters": [],
 
         "tags": reqBody["tags"] == null ? [] : reqBody["tags"],
@@ -69,6 +70,13 @@ let getUserPosts = async (req, res) => {
     res.status(200).send(allUserPosts);
 }
 
+// Get Post Comments
+let getPostComments = async (req, res) => {
+    let postID = req.params.postID;
+    let comments = await commentsModel.find({"postID": postID});
+    res.status(200).send(comments);
+}
+
 // Delete Posts
 let deletePost = async (req, res) => {
     let reqBody = req.body;
@@ -94,4 +102,5 @@ module.exports = {
     getFeed,
     getUserPosts,
     deletePost,
+    getPostComments,
 }

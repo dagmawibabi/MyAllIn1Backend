@@ -120,6 +120,14 @@ let getCommunityChat = async (req, res) => {
     res.status(200).send(chats);
 }
 
+let getCommunityMembers = async (req, res) => {
+    let communityUsername = req.params.communityUsername;
+    let community = await communityModel.findOne({username: communityUsername});
+    let members = community["members"];
+    let membersProfile = await accountModel.find({"username": {$in: members}});
+    res.status(200).send(membersProfile);
+}
+
 // Clear only your texts
 let clearCommunityChat = async (req, res) => {
     let from = req.params.from.toString().toLowerCase();
@@ -172,5 +180,6 @@ module.exports = {
     getCommunityChat,
     clearCommunityChat,
     clearAllCommunityChat,
-    updateCommunityInfo
+    updateCommunityInfo,
+    getCommunityMembers,
 }

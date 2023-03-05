@@ -23,5 +23,6 @@ Router.get("/getAllPosts", postsController.getAllPosts);
 Router.get("/getFeed/:username", postsController.getFeed);
 Router.post("/getUserPosts", postsController.getUserPosts);
 Router.post("/deletePost", postsController.deletePost);
+Router.get("/getPostComments/:postID", postsController.getPostComments);
 
 module.exports = Router;

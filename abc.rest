@@ -1,4 +1,26 @@
 
+# POST http://localhost:7000/philomena/interactions/likeUnlikeComments HTTP/1.1
+# content-type: application/json
+
+# {
+#     "commentID": "6404a65353273e1bfe4f8761",
+#     "likedBy": "anne"
+# }
+
+# GET http://localhost:7000/philomena/posts/getPostComments/6404a57bc5ad56fefabdc9cb
+
+# POST http://localhost:7000/philomena/interactions/commentOnPost HTTP/1.1
+# content-type: application/json
+
+# {
+#     "fullname": "Dagmawi Babi",
+#     "username": "dagmawibabi",
+#     "postID": "6404a57bc5ad56fefabdc9cb",
+#     "content": "It's so cool right?!!"
+# }
+
+# GET http://localhost:7000/philomena/community/getCommunityMembers/dbcommunity
+# GET http://localhost:7000/philomena/community/getCommunityMembers/dagmawibabi
 # GET http://localhost:7000/philomena/community/deleteCommunity/SamAltmanCommunity/dagmawibabi
 # GET http://localhost:7000/philomena/community/getMyCommunities/dagmawibabi
 # GET http://localhost:7000/philomena/community/getCommunityChat/SamAltmanCommunity
@@ -19,8 +41,8 @@
 # content-type: application/json
 
 # {
-#     "name": "Sam Altman",
-#     "username": "SamAltmanCommunity",
+#     "name": "Dagmawi Babi",
+#     "username": "dbcommunity",
 #     "members": "",
 #     "bio": "Welcome to my community",
 #     "private": false,
@@ -29,7 +51,7 @@
 
 
 # GET http://localhost:7000/philomena/community/leaveCommunity/SamAltmanCommunity/dagmawibabi
-# GET http://localhost:7000/philomena/community/joinCommunity/SamAltmanCommunity/dagmawibabi
+# GET http://localhost:7000/philomena/community/joinCommunity/dbcommunity/anne
 # GET http://localhost:7000/philomena/community
 
 
@@ -89,9 +111,9 @@
 # content-type: application/json
 
 # {
-#     "username": "yyyy",
-#     "content": "im on philomena",
-#     "time": "1673389885558"
+#     "fullname": "Dagmawi Babi",
+#     "username": "dagmawibabi",
+#     "content": "I'm on Philomena"
 # }
 
 # GET http://localhost:7000/philomena/search/
@@ -126,10 +148,14 @@
 # content-type: application/json
 
 # {
-#     "fullname": "Jordan B Peterson",
-#     "username": "jordan",
-#     "password": "jordan"
+#     "fullname": "Anne Leone",
+#     "username": "anne",
+#     "password": "anne"
 # }
+
+# "fullname": "Dagmawi Babi",
+# "username": "dagmawibabi",
+# "password": "dagmawibabi"
 
 # POST http://localhost:7000/philomena/authentication/login HTTP/1.1
 # content-type: application/json

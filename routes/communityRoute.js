@@ -17,6 +17,6 @@ Router.get("/clearCommunityChat/:communityUsername/:from", communityController.c
 Router.get("/clearAllCommunityChat/:communityUsername", communityController.clearAllCommunityChat);
 
 Router.post("/updateCommunityInfo", communityController.updateCommunityInfo);
-
+Router.get("/getCommunityMembers/:communityUsername", communityController.getCommunityMembers);
 
 module.exports = Router;

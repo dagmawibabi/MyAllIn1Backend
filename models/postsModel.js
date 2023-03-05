@@ -10,11 +10,11 @@ let postsScheme = new mongoose.Schema({
     video: String,
 
     likes: Number,
-    comments: Number,
+    commentCount: Number,
     reposts: Number,
 
     likers: Array,
-    commenters: Array,
+    comments: Array,
     reposters: Array,
 
     tags: Array,
