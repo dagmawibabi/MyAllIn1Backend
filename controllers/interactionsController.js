@@ -150,10 +150,21 @@ let likeUnlikeComments = async (req, res) => {
 
     res.status(200).send("Comment has been interacted with");
 }
+
+// Delete Comments
+let deleteComment = async (req, res) => {
+    let commentID = req.params.commentID;
+    let postID = req.params.postID;
+    await commentsModel.deleteOne({"_id": commentID});
+    await postsModel.updateOne({"_id": postID}, {$inc: {"commentCount": -1}, $pull: {"comments": commentID}})
+    res.status(200).send("Comment Deleted");
+}
+
 module.exports = {
     introduction,
     likeDislikePosts,
     followUnFollowUser,
     commentOnPost,
     likeUnlikeComments,
+    deleteComment,
 }

@@ -15,13 +15,13 @@ let uploadImage = async (req, res) => {
         "image": req.imageName,
 
         "likes": 1,
-        "comments": 0,
+        "commentCount": 0,
         "reposts": 0, 
 
         "likers": [
-            reqBody["username"],
+            reqBody["username"], 
         ],
-        "commenters": [],
+        "comments": [],
         "reposters": [],
 
         "tags": reqBody["tags"] == null ? [] : reqBody["tags"],

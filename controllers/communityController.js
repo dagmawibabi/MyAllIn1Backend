@@ -169,6 +169,11 @@ let updateCommunityInfo = async (req, res) => {
 
 }
 
+let discoverCommunities = async (req, res) => {
+    let discoveredCommunities = await communityModel.find({private: false});
+    res.status(200).send(discoveredCommunities);
+}
+
 module.exports = {
     introduction,
     getMyCommunities,
@@ -182,4 +187,5 @@ module.exports = {
     clearAllCommunityChat,
     updateCommunityInfo,
     getCommunityMembers,
+    discoverCommunities,
 }

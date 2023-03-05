@@ -1,3 +1,6 @@
+# GET http://localhost:7000/philomena/community/discoverCommunities
+
+# GET http://localhost:7000/philomena/interactions/deleteComment/6404a57bc5ad56fefabdc9cb/6404eda04a2480b15019b006
 
 # POST http://localhost:7000/philomena/interactions/likeUnlikeComments HTTP/1.1
 # content-type: application/json
